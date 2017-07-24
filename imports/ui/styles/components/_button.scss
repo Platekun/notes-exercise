@@ -1,0 +1,28 @@
+.button {
+    background-color: $button-bg;
+    border: none;
+    color: $button-color;
+    cursor: pointer;
+    font-size: $base-font-size;
+    margin-bottom: $space;
+    line-height: 1.2;
+    padding: $input-spacing;
+    text-transform: uppercase;
+    &--link {
+        color: inherit;
+        display: inline-block;
+        text-decoration: none;
+    }
+    &--pill {
+        background-color: transparent;
+        color: $button-bg;
+        border: 1px solid $button-bg;
+        margin: 0 $space/2 0 0;
+        padding: 0.3rem 0.8rem;
+    }
+    &--normal {
+        background-color: $button-bg-normal;
+        border: 1px solid $button-border-normal;
+        color: $button-color-normal;
+    }
+}

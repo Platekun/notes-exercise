@@ -1,0 +1,11 @@
+.wrapper {
+    margin: 0 auto;
+    max-width: 80%;
+    padding: $space;
+}
+
+@media (min-width: 587px) {
+    .wrapper {
+        max-width: $site-max-width;
+    }
+}

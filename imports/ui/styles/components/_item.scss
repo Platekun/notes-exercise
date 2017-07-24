@@ -1,0 +1,10 @@
+.item {
+    background-color: $item-bg;
+    border: 1px solid $item-border;
+    margin-bottom: $space;
+    list-style-type: none;
+    padding: $space;
+    &__message {
+        color: $dark-gray;
+    }
+}
