@@ -1,15 +1,16 @@
-import { Accounts } from 'meteor/accounts-base';
 import React, { Component } from 'react';
 import PrivateHeader from './PrivateHeader'
+import NoteList from './NoteList';
+import NoteEditor from './NoteEditor';
+import { createContainer } from 'meteor/react-meteor-data';
 
-const logout = ({ history }) => Accounts.logout(() => history.replace('/'));
+const Dashboard = props =>
+  <div>
+    <PrivateHeader title="Dashboard" history={props.history} />
+    <NoteEditor history={props.history} />
+    <div className="wrapper">
+      <NoteList />
+    </div>
+  </div>;
 
-const LinkPage = props =>
-    <div>
-        <PrivateHeader title="Dashboard" onLogout={() => logout(props)} />
-        <div className="wrapper">
-            Dashboard
-        </div>
-    </div>;
-
-export default LinkPage;
+export default Dashboard;
