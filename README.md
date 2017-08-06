@@ -1,2 +1,2 @@
-# Boilerplate meteor project
-This includes a basic react and auth setup
+# Note Editor Meteor App
+Note Editor app exercise from the meteor & react course
