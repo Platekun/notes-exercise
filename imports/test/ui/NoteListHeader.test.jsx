@@ -5,7 +5,7 @@ import { mount } from 'enzyme';
 import { NoteListHeader } from '../../ui/components/NoteListHeader';
 
 if (Meteor.isClient) {
-  describe('Note List Item', function () {
+  describe('Note List Header', function () {
     it('should call meteor call on click.', function () {
       const meteorCall = expect.createSpy();
       const Session = { set: expect.createSpy() };
@@ -17,7 +17,7 @@ if (Meteor.isClient) {
     it('should call Session set with the new note id.', function () {
       const meteorCall = expect.createSpy();
       const Session = { set: expect.createSpy() };
-      const wrapper = mount(<NoteListHeader metoerCall={meteorCall} Session={Session} />);
+      const wrapper = mount(<NoteListHeader meteorCall={meteorCall} Session={Session} />);
       wrapper.find('button').simulate('click');
       const onNoteInserted = meteorCall.calls[0].arguments[1];
 

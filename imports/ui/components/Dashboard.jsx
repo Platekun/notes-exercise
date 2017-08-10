@@ -6,10 +6,14 @@ import { createContainer } from 'meteor/react-meteor-data';
 
 const Dashboard = props =>
   <div>
-    <PrivateHeader title="Dashboard" history={props.history} />
-    <NoteEditor history={props.history} />
+    <PrivateHeader title="Notes" history={props.history} />
     <div className="wrapper">
-      <NoteList />
+      <div className="wrapper__sidebar">
+        <NoteList />
+      </div>
+      <div className="wrapper__main">
+        <NoteEditor history={props.history} />
+      </div>
     </div>
   </div>;
 

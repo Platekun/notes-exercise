@@ -1,11 +1,39 @@
-.wrapper {
-    margin: 0 auto;
-    max-width: 80%;
-    padding: $space;
+.is-nav-open .wrapper__sidebar {
+    left: 0;
 }
 
-@media (min-width: 587px) {
-    .wrapper {
-        max-width: $site-max-width;
+.wrapper {
+    display: flex;
+    height: $wrapper-content-height;
+    margin: 0 auto;
+    max-width: $site-max-width;
+    padding: 0;
+    @include desktop {
+        padding: $large-space;
+    }
+    &__sidebar {
+        width: 100vw;
+        position: fixed;
+        bottom: 0;
+        left: -100vw;
+        top: $header-height;
+        transition: left ease 0.5s, right ease 0.5s;
+        @include desktop {
+            display: flex;
+            width: $wrapper-sidebar-width;
+            position: static;
+            padding-right: $large-space;
+        }
+        ul {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__main {
+        display: flex;
+        width: 100%;
+        @include desktop {
+            max-width: $site-max-width;
+        }
     }
 }

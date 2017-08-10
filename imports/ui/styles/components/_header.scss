@@ -2,8 +2,10 @@
     background: $header-bg;
     color: $header-color;
     &__content {
+        align-items: center;
         display: flex;
         justify-content: space-between;
+        height: $header-height;
         max-width: $site-max-width;
         margin: 0 auto;
         padding: $space;
@@ -16,5 +18,13 @@
         border: none;
         color: white;
         cursor: pointer;
+    }
+    &__nav-toggle {
+        cursor: pointer;
+        height: 2rem;
+        width: 2rem;
+        @include desktop() {
+            display: none;
+        }
     }
 }

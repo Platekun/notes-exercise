@@ -1,0 +1,28 @@
+.editor {
+  background-color: white;
+  border: 1px solid $gray;
+  display: flex;
+  flex-direction: column;
+  padding: $large-space;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  &__title {
+    border: none;
+    border-bottom: 2px solid $gray;
+    font-size: $large-font-size;
+    margin-bottom: $large-space;
+    outline: none;
+    padding: $space;
+  }
+  &__body {
+    flex-grow: 1;
+    font-weight: 300;
+    margin-bottom: $large-space;
+    resize: none;
+  }
+  &__message {
+    text-align: center;
+    margin: $large-space auto;
+    font-style: italic;
+  }
+}

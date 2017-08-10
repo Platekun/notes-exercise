@@ -14,10 +14,9 @@ const renderNotes = ({ notes }) =>
     <NoteListEmptyItem />;
 
 export const NoteList = props =>
-  <ul>
+  <ul className="item-list">
     <NoteListHeader />
     {renderNotes(props)}
-    NoteList {props.notes.length}
   </ul>;
 
 Notes.propTypes = {

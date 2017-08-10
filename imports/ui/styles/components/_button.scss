@@ -25,4 +25,7 @@
         border: 1px solid $button-border-normal;
         color: $button-color-normal;
     }
+    &--danger {
+        background-color: $danger;
+    }
 }

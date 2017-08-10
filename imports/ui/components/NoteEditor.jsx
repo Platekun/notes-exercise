@@ -60,14 +60,20 @@ export class NoteEditor extends Component {
 
     if (note) {
       content = (
-        <div>
-          <input value={title} placeholder="Your title here." onChange={handleTitleChange} />
-          <textarea value={body} placeholder="Your note here." onChange={handleBodyChange}></textarea>
-          <button onClick={deleteNote}>Delete note</button>
+        <div className="editor">
+          <input value={title} placeholder="Your title here." onChange={handleTitleChange} className="editor__title"/>
+          <textarea value={body} placeholder="Your note here." onChange={handleBodyChange} className="editor__body"></textarea>
+          <div>
+            <button onClick={deleteNote} className="button button--danger">Delete note</button>
+          </div>
         </div>
       );
     } else {
-      content = selectedNoteId ? <p>Note not found!</p> : <p>Pick a note to get started.</p>
+      content = (
+        <div className="editor">
+          <p className="editor__message">{selectedNoteId ? 'Note not found!' : 'Pick a note to get started.'}</p>
+        </div>
+      );
     }
 
     return content;

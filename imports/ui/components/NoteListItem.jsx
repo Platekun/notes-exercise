@@ -5,10 +5,13 @@ import { createContainer } from 'meteor/react-meteor-data';
 import moment from 'moment';
 
 export const NoteListItem = props =>
-  <div onClick={() => props.Session.set('selectedNoteId', props.note._id)}>
-    <h5>{props.note.title ||  'Untitled'}</h5>
-    {props.note.selected ? 'Selected' : ''}
-    <p>{moment(props.note.updatedAt).format('DD/MM/YYYY')}</p>
+  <div onClick={() => {
+      props.Session.set('selectedNoteId', props.note._id);
+      props.Session.set('isNavOpen', false);
+    }}
+    className={`item ${props.note.selected ? 'item--selected' : ''}`}>
+      <h5 className="item__title">{props.note.title ||  'Untitled'}</h5>
+      <p className="item__subtitle">{moment(props.note.updatedAt).format('DD/MM/YYYY')}</p>
   </div>;
 
 NoteListItem.propTypes = {
